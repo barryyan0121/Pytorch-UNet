@@ -1,0 +1,72 @@
+2022-01-11 10:45:54,634 INFO    MainThread:52560 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-11 10:45:54,634 INFO    MainThread:52560 [wandb_setup.py:_flush():71] setting login settings: {'anonymous': 'must'}
+2022-01-11 10:45:54,635 INFO    MainThread:52560 [wandb_init.py:_log_setup():371] Logging user logs to E:\Pytorch-UNet\wandb\run-20220111_104554-2erz6bop\logs\debug.log
+2022-01-11 10:45:54,635 INFO    MainThread:52560 [wandb_init.py:_log_setup():372] Logging internal logs to E:\Pytorch-UNet\wandb\run-20220111_104554-2erz6bop\logs\debug-internal.log
+2022-01-11 10:45:54,638 INFO    MainThread:52560 [wandb_init.py:init():404] calling init triggers
+2022-01-11 10:45:54,638 INFO    MainThread:52560 [wandb_init.py:init():411] wandb.init called with sweep_config: {}
+config: {}
+2022-01-11 10:45:54,640 INFO    MainThread:52560 [wandb_init.py:init():449] starting backend
+2022-01-11 10:45:54,640 INFO    MainThread:52560 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=spawn, using: spawn
+2022-01-11 10:45:54,659 INFO    MainThread:52560 [backend.py:ensure_launched():199] starting backend process...
+2022-01-11 10:45:56,341 INFO    MainThread:52560 [backend.py:ensure_launched():205] started backend process with pid: 59620
+2022-01-11 10:45:56,342 INFO    MainThread:52560 [wandb_init.py:init():458] backend started and connected
+2022-01-11 10:45:56,349 INFO    MainThread:52560 [wandb_init.py:init():519] updated telemetry
+2022-01-11 10:45:56,449 INFO    MainThread:52560 [wandb_init.py:init():549] communicating current version
+2022-01-11 10:45:59,192 INFO    MainThread:52560 [wandb_init.py:init():554] got version response upgrade_message: "wandb version 0.12.9 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-01-11 10:45:59,192 INFO    MainThread:52560 [wandb_init.py:init():564] communicating run to backend with 30 second timeout
+2022-01-11 10:46:00,005 INFO    MainThread:52560 [wandb_init.py:init():592] starting run threads in backend
+2022-01-11 10:46:05,028 INFO    MainThread:52560 [wandb_run.py:_console_start():1816] atexit reg
+2022-01-11 10:46:05,031 INFO    MainThread:52560 [wandb_run.py:_redirect():1690] redirect: SettingsConsole.WRAP
+2022-01-11 10:46:05,034 INFO    MainThread:52560 [wandb_run.py:_redirect():1727] Wrapping output streams.
+2022-01-11 10:46:05,038 INFO    MainThread:52560 [wandb_run.py:_redirect():1751] Redirects installed.
+2022-01-11 10:46:05,039 INFO    MainThread:52560 [wandb_init.py:init():619] run started, returning control to user process
+2022-01-11 10:46:05,061 INFO    MainThread:52560 [wandb_run.py:_config_callback():962] config_cb None None {'epochs': 5, 'batch_size': 1, 'learning_rate': 1e-05, 'val_percent': 0.1, 'save_checkpoint': True, 'img_scale': 0.5, 'amp': False}
+2022-01-11 10:56:20,719 INFO    MainThread:52560 [wandb_run.py:_atexit_cleanup():1777] got exitcode: 0
+2022-01-11 10:56:20,739 INFO    MainThread:52560 [wandb_run.py:_restore():1757] restore
+2022-01-11 10:56:26,339 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:56:31,486 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:56:36,589 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:56:41,690 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:56:46,791 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:56:51,893 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:56:56,995 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:02,096 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:07,196 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:12,299 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:17,402 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:22,508 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:27,610 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:32,712 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:37,815 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:42,916 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:48,017 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:53,119 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:57:58,221 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:03,321 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:08,424 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:13,526 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:18,627 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:23,730 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:28,830 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:33,933 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:39,035 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:44,138 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:49,241 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:54,343 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:58:59,446 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:04,549 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:09,651 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:14,752 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:19,853 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:24,956 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:30,057 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:35,159 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:40,260 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:45,362 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:50,464 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 10:59:55,564 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 11:00:00,667 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 11:00:05,769 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 11:00:10,871 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None
+2022-01-11 11:00:15,974 INFO    MainThread:52560 [wandb_run.py:_wait_for_finish():1912] got exit ret: None

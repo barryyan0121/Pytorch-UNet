@@ -1,0 +1,22 @@
+INFO: Starting training:
+        Epochs:          5
+        Batch size:      1
+        Learning rate:   1e-05
+        Training size:   1530
+        Validation size: 170
+        Checkpoints:     True
+        Device:          cuda
+        Images scaling:  0.5
+        Mixed Precision: False
+
+Epoch 1/5:   0%|          | 0/1530 [13:52<?, ?img/s]
+Traceback (most recent call last):
+  File "E:/Pytorch-UNet/train.py", line 191, in <module>
+    amp=args.amp)
+  File "E:/Pytorch-UNet/train.py", line 94, in train_net
+    + dice_loss(F.softmax(masks_pred, dim=1).float(),
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\torch\nn\functional.py", line 1680, in softmax
+    ret = input.softmax(dim)
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.

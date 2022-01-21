@@ -1,0 +1,20 @@
+INFO: Starting training:
+        Epochs:          5
+        Batch size:      1
+        Learning rate:   1e-05
+        Training size:   1530
+        Validation size: 170
+        Checkpoints:     True
+        Device:          cuda
+        Images scaling:  0.5
+        Mixed Precision: False
+Epoch 1/5:   0%|          | 0/1530 [00:00<?, ?img/s]wandb: Network error resolved after 0:00:16.561563, resuming normal operation.
+Epoch 1/5:   0%|          | 0/1530 [00:06<?, ?img/s]
+INFO: Saved interrupt
+Exception ignored in: <bound method _MultiProcessingDataLoaderIter.__del__ of <torch.utils.data.dataloader._MultiProcessingDataLoaderIter object at 0x00000232869B6E10>>
+Traceback (most recent call last):
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\torch\utils\data\dataloader.py", line 1328, in __del__
+    self._shutdown_workers()
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\torch\utils\data\dataloader.py", line 1295, in _shutdown_workers
+    if self._persistent_workers or self._workers_status[worker_id]:
+AttributeError: '_MultiProcessingDataLoaderIter' object has no attribute '_workers_status'

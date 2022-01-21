@@ -1,0 +1,35 @@
+2021-12-09 16:40:38,369 INFO    MainThread:37692 [wandb_setup.py:_flush():71] setting env: {}
+2021-12-09 16:40:38,369 INFO    MainThread:37692 [wandb_setup.py:_flush():71] setting login settings: {'anonymous': 'must'}
+2021-12-09 16:40:38,369 INFO    MainThread:37692 [wandb_init.py:_log_setup():371] Logging user logs to E:\Pytorch-UNet\wandb\run-20211209_164038-3aocxmeh\logs\debug.log
+2021-12-09 16:40:38,369 INFO    MainThread:37692 [wandb_init.py:_log_setup():372] Logging internal logs to E:\Pytorch-UNet\wandb\run-20211209_164038-3aocxmeh\logs\debug-internal.log
+2021-12-09 16:40:38,370 INFO    MainThread:37692 [wandb_init.py:init():404] calling init triggers
+2021-12-09 16:40:38,370 INFO    MainThread:37692 [wandb_init.py:init():411] wandb.init called with sweep_config: {}
+config: {}
+2021-12-09 16:40:38,371 INFO    MainThread:37692 [wandb_init.py:init():449] starting backend
+2021-12-09 16:40:38,371 INFO    MainThread:37692 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=spawn, using: spawn
+2021-12-09 16:40:38,377 INFO    MainThread:37692 [backend.py:ensure_launched():199] starting backend process...
+2021-12-09 16:40:38,465 INFO    MainThread:37692 [backend.py:ensure_launched():205] started backend process with pid: 31400
+2021-12-09 16:40:38,466 INFO    MainThread:37692 [wandb_init.py:init():458] backend started and connected
+2021-12-09 16:40:38,468 INFO    MainThread:37692 [wandb_init.py:init():519] updated telemetry
+2021-12-09 16:40:38,549 INFO    MainThread:37692 [wandb_init.py:init():549] communicating current version
+2021-12-09 16:40:39,623 INFO    MainThread:37692 [wandb_init.py:init():554] got version response 
+2021-12-09 16:40:39,623 INFO    MainThread:37692 [wandb_init.py:init():564] communicating run to backend with 30 second timeout
+2021-12-09 16:41:09,624 INFO    MainThread:37692 [interface_queue.py:_communicate_run():336] couldn't get run from backend
+2021-12-09 16:41:09,624 ERROR   MainThread:37692 [wandb_init.py:init():569] backend process timed out
+2021-12-09 16:41:09,624 ERROR   MainThread:37692 [wandb_init.py:init():578] encountered error: Error communicating with wandb process
+try: wandb.init(settings=wandb.Settings(start_method='fork'))
+or:  wandb.init(settings=wandb.Settings(start_method='thread'))
+For more info see: https://docs.wandb.ai/library/init#init-start-error
+2021-12-09 16:42:57,441 WARNING MainThread:37692 [wandb_init.py:init():938] interrupted
+Traceback (most recent call last):
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\wandb\sdk\wandb_init.py", line 917, in init
+    run = wi.init()
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\wandb\sdk\wandb_init.py", line 582, in init
+    backend.cleanup()
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\wandb\sdk\backend\backend.py", line 230, in cleanup
+    self.wandb_process.join()
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\multiprocessing\process.py", line 124, in join
+    res = self._popen.wait(timeout)
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\multiprocessing\popen_spawn_win32.py", line 80, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt

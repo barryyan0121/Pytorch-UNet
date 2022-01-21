@@ -1,0 +1,36 @@
+2021-12-09 15:08:07,168 INFO    MainThread:36712 [wandb_setup.py:_flush():71] setting env: {}
+2021-12-09 15:08:07,168 INFO    MainThread:36712 [wandb_setup.py:_flush():71] setting login settings: {'anonymous': 'must'}
+2021-12-09 15:08:07,168 INFO    MainThread:36712 [wandb_init.py:_log_setup():371] Logging user logs to E:\Pytorch-UNet\wandb\run-20211209_150807-azp7z55b\logs\debug.log
+2021-12-09 15:08:07,168 INFO    MainThread:36712 [wandb_init.py:_log_setup():372] Logging internal logs to E:\Pytorch-UNet\wandb\run-20211209_150807-azp7z55b\logs\debug-internal.log
+2021-12-09 15:08:07,169 INFO    MainThread:36712 [wandb_init.py:init():404] calling init triggers
+2021-12-09 15:08:07,169 INFO    MainThread:36712 [wandb_init.py:init():411] wandb.init called with sweep_config: {}
+config: {}
+2021-12-09 15:08:07,170 INFO    MainThread:36712 [wandb_init.py:init():449] starting backend
+2021-12-09 15:08:07,170 INFO    MainThread:36712 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=spawn, using: spawn
+2021-12-09 15:08:07,175 INFO    MainThread:36712 [backend.py:ensure_launched():199] starting backend process...
+2021-12-09 15:08:07,262 INFO    MainThread:36712 [backend.py:ensure_launched():205] started backend process with pid: 4092
+2021-12-09 15:08:07,263 INFO    MainThread:36712 [wandb_init.py:init():458] backend started and connected
+2021-12-09 15:08:07,265 INFO    MainThread:36712 [wandb_init.py:init():519] updated telemetry
+2021-12-09 15:08:07,335 INFO    MainThread:36712 [wandb_init.py:init():549] communicating current version
+2021-12-09 15:08:08,359 INFO    MainThread:36712 [wandb_init.py:init():554] got version response 
+2021-12-09 15:08:08,359 INFO    MainThread:36712 [wandb_init.py:init():564] communicating run to backend with 30 second timeout
+2021-12-09 15:08:16,956 INFO    MainThread:36712 [wandb_init.py:init():592] starting run threads in backend
+2021-12-09 15:08:17,633 WARNING MainThread:36712 [wandb_init.py:init():938] interrupted
+Traceback (most recent call last):
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\wandb\sdk\wandb_init.py", line 917, in init
+    run = wi.init()
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\wandb\sdk\wandb_init.py", line 597, in init
+    _ = backend.interface.communicate_run_start(run_obj)
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\wandb\sdk\interface\interface.py", line 216, in communicate_run_start
+    result = self._communicate_run_start(run_start)
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\wandb\sdk\interface\interface_queue.py", line 446, in _communicate_run_start
+    result = self._communicate(rec)
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\wandb\sdk\interface\interface_queue.py", line 232, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\site-packages\wandb\sdk\interface\router.py", line 32, in get
+    is_set = self._object_ready.wait(timeout)
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\threading.py", line 551, in wait
+    signaled = self._cond.wait(timeout)
+  File "C:\Users\2110012.WXCNL-5887\anaconda3\envs\Pytorch-UNet\lib\threading.py", line 299, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

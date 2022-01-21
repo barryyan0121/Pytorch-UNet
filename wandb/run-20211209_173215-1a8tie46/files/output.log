@@ -1,0 +1,23 @@
+INFO: Starting training:
+        Epochs:          5
+        Batch size:      1
+        Learning rate:   1e-05
+        Training size:   1530
+        Validation size: 170
+        Checkpoints:     True
+        Device:          cuda
+        Images scaling:  0.5
+        Mixed Precision: False
+Epoch 1/5:   0%|          | 0/1530 [00:13<?, ?img/s]
+Traceback (most recent call last):
+  File "E:/Pytorch-UNet/train.py", line 191, in <module>
+    amp=args.amp)
+  File "E:/Pytorch-UNet/train.py", line 96, in train_net
+    multiclass=True)
+  File "E:\Pytorch-UNet\utils\dice_score.py", line 40, in dice_loss
+    return 1 - fn(input, target, reduce_batch_first=True)
+  File "E:\Pytorch-UNet\utils\dice_score.py", line 31, in multiclass_dice_coeff
+    dice += dice_coeff(input[:, channel, ...], target[:, channel, ...], reduce_batch_first, epsilon)
+  File "E:\Pytorch-UNet\utils\dice_score.py", line 12, in dice_coeff
+    inter = torch.dot(input.reshape(-1), target.reshape(-1))
+RuntimeError: CUDA error: CUBLAS_STATUS_NOT_INITIALIZED when calling `cublasCreate(handle)`

@@ -1,0 +1,70 @@
+2022-01-11 14:47:31,016 INFO    MainThread:34836 [wandb_setup.py:_flush():71] setting env: {}
+2022-01-11 14:47:31,017 INFO    MainThread:34836 [wandb_setup.py:_flush():71] setting login settings: {'anonymous': 'must'}
+2022-01-11 14:47:31,017 INFO    MainThread:34836 [wandb_init.py:_log_setup():371] Logging user logs to E:\Pytorch-UNet\wandb\run-20220111_144731-3h41r4ny\logs\debug.log
+2022-01-11 14:47:31,017 INFO    MainThread:34836 [wandb_init.py:_log_setup():372] Logging internal logs to E:\Pytorch-UNet\wandb\run-20220111_144731-3h41r4ny\logs\debug-internal.log
+2022-01-11 14:47:31,019 INFO    MainThread:34836 [wandb_init.py:init():404] calling init triggers
+2022-01-11 14:47:31,019 INFO    MainThread:34836 [wandb_init.py:init():411] wandb.init called with sweep_config: {}
+config: {}
+2022-01-11 14:47:31,021 INFO    MainThread:34836 [wandb_init.py:init():449] starting backend
+2022-01-11 14:47:31,021 INFO    MainThread:34836 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=spawn, using: spawn
+2022-01-11 14:47:31,033 INFO    MainThread:34836 [backend.py:ensure_launched():199] starting backend process...
+2022-01-11 14:47:32,444 INFO    MainThread:34836 [backend.py:ensure_launched():205] started backend process with pid: 65912
+2022-01-11 14:47:32,475 INFO    MainThread:34836 [wandb_init.py:init():458] backend started and connected
+2022-01-11 14:47:32,480 INFO    MainThread:34836 [wandb_init.py:init():519] updated telemetry
+2022-01-11 14:47:32,619 INFO    MainThread:34836 [wandb_init.py:init():549] communicating current version
+2022-01-11 14:47:37,371 INFO    MainThread:34836 [wandb_init.py:init():554] got version response upgrade_message: "wandb version 0.12.9 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-01-11 14:47:37,372 INFO    MainThread:34836 [wandb_init.py:init():564] communicating run to backend with 30 second timeout
+2022-01-11 14:47:38,581 INFO    MainThread:34836 [wandb_init.py:init():592] starting run threads in backend
+2022-01-11 14:47:43,611 INFO    MainThread:34836 [wandb_run.py:_console_start():1816] atexit reg
+2022-01-11 14:47:43,614 INFO    MainThread:34836 [wandb_run.py:_redirect():1690] redirect: SettingsConsole.WRAP
+2022-01-11 14:47:43,615 INFO    MainThread:34836 [wandb_run.py:_redirect():1727] Wrapping output streams.
+2022-01-11 14:47:43,620 INFO    MainThread:34836 [wandb_run.py:_redirect():1751] Redirects installed.
+2022-01-11 14:47:43,620 INFO    MainThread:34836 [wandb_init.py:init():619] run started, returning control to user process
+2022-01-11 14:47:43,628 INFO    MainThread:34836 [wandb_run.py:_config_callback():962] config_cb None None {'epochs': 5, 'batch_size': 1, 'learning_rate': 1e-05, 'val_percent': 0.1, 'save_checkpoint': True, 'img_scale': 0.5, 'amp': True}
+2022-01-11 16:40:54,034 INFO    MainThread:34836 [wandb_run.py:_atexit_cleanup():1786] got exitcode: 0
+2022-01-11 16:40:54,036 INFO    MainThread:34836 [wandb_run.py:_restore():1758] restore
+2022-01-11 16:40:59,529 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:04,645 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:09,747 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:14,849 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:19,950 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:25,050 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:30,153 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:35,257 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:40,359 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:45,460 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:50,563 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:41:55,665 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:00,767 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:05,869 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:10,973 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:16,075 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:21,178 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:26,279 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:31,379 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:36,482 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:41,584 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:46,684 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:51,787 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:42:56,889 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:43:01,602 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: file_counts {
+  wandb_count: 1
+  media_count: 150
+}
+pusher_stats {
+  uploaded_bytes: 7885082
+  total_bytes: 9013438
+}
+
+2022-01-11 16:43:01,726 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: file_counts {
+  wandb_count: 1
+  media_count: 150
+}
+pusher_stats {
+  uploaded_bytes: 7885082
+  total_bytes: 9013438
+}
+
+2022-01-11 16:43:06,830 INFO    MainThread:34836 [wandb_run.py:_wait_for_finish():1916] got exit ret: None
+2022-01-11 16:43:06,931 INFO    MainThread:34836 [wandb_run.py:_restore():1758] restore

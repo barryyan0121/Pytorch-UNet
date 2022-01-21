@@ -1,17 +1,34 @@
 import argparse
 import logging
 import os
+import time
+import torch
+
 
 import numpy as np
-import torch
 import torch.nn.functional as F
-from PIL import Image
-from torchvision import transforms
 
+
+from functools import wraps
 from utils.data_loading import BasicDataset
 from unet import UNet
 from utils.utils import plot_img_and_mask
+from PIL import Image
+from torchvision import transforms
 
+
+def timeit(f):
+    @wraps(f)
+    def wrap(*args, **kw):
+        ts = time.time()
+        result = f(*args, **kw)
+        te = time.time()
+        print('func:%r args:[%r, %r] took: %2.4f sec' % (f.__name__, args, kw, te-ts))
+        return result
+    return wrap
+
+
+@timeit
 def predict_img(net,
                 full_img,
                 device,
@@ -84,6 +101,7 @@ if __name__ == '__main__':
     net = UNet(n_channels=3, n_classes=2)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(f'Using device {device}')
     logging.info(f'Loading model {args.model}')
     logging.info(f'Using device {device}')
 
