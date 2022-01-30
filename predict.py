@@ -53,7 +53,7 @@ def predict_img(net,
             transforms.ToTensor()
         ])
 
-        full_mask = tf(probs.cpu()).squeeze()
+        full_mask = tf(probs).squeeze()
 
     if net.n_classes == 1:
         return (full_mask > out_threshold).numpy()

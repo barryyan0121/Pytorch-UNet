@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 import sys
 from pathlib import Path
 
@@ -19,6 +20,7 @@ from unet import UNet
 dir_img = Path('./data/imgs/')
 dir_mask = Path('./data/masks/')
 dir_checkpoint = Path('./checkpoints/')
+os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
 
 def train_net(net,
@@ -167,7 +169,7 @@ if __name__ == '__main__':
     logging.info(f'Using device {device}')
 
     # Change here to adapt to your data
-    # n_channels=3 for RGB images
+    # n_channels=3 for RGB21 images
     # n_classes is the number of probabilities you want to get per pixel
     net = UNet(n_channels=3, n_classes=2, bilinear=True)
 
