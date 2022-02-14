@@ -21,6 +21,7 @@ dir_img = Path('./data/imgs/')
 dir_mask = Path('./data/masks/')
 dir_checkpoint = Path('./checkpoints/')
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
+torch.cuda.empty_cache()
 
 
 def train_net(net,
@@ -148,12 +149,12 @@ def train_net(net,
 
 def get_args():
     parser = argparse.ArgumentParser(description='Train the UNet on images and target masks')
-    parser.add_argument('--epochs', '-e', metavar='E', type=int, default=20, help='Number of epochs')
-    parser.add_argument('--batch-size', '-b', dest='batch_size', metavar='B', type=int, default=1, help='Batch size')
+    parser.add_argument('--epochs', '-e', metavar='E', type=int, default=15, help='Number of epochs')
+    parser.add_argument('--batch-size', '-b', dest='batch_size', metavar='B', type=int, default=8, help='Batch size')
     parser.add_argument('--learning-rate', '-l', metavar='LR', type=float, default=0.00001,
                         help='Learning rate', dest='lr')
     parser.add_argument('--load', '-f', type=str, default=False, help='Load model from a .pth file')
-    parser.add_argument('--scale', '-s', type=float, default=0.5, help='Downscaling factor of the images')
+    parser.add_argument('--scale', '-s', type=float, default=0.2, help='Downscaling factor of the images')
     parser.add_argument('--validation', '-v', dest='val', type=float, default=10.0,
                         help='Percent of the data that is used as validation (0-100)')
     parser.add_argument('--amp', action='store_true', default=True, help='Use mixed precision')
@@ -171,7 +172,7 @@ if __name__ == '__main__':
     # Change here to adapt to your data
     # n_channels=3 for RGB21 images
     # n_classes is the number of probabilities you want to get per pixel
-    net = UNet(n_channels=3, n_classes=2, bilinear=True)
+    net = UNet(n_channels=1, n_classes=2, bilinear=True)
 
     logging.info(f'Network:\n'
                  f'\t{net.n_channels} input channels\n'

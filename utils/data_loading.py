@@ -38,8 +38,8 @@ class BasicDataset(Dataset):
         elif not is_mask:
             img_ndarray = img_ndarray.transpose((2, 0, 1))
 
-        # if not is_mask:
-        img_ndarray = img_ndarray / 255
+        if not is_mask:
+            img_ndarray = img_ndarray / 255
 
         return img_ndarray
 

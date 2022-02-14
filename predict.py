@@ -17,18 +17,18 @@ from PIL import Image
 from torchvision import transforms
 
 
-def timeit(f):
-    @wraps(f)
-    def wrap(*args, **kw):
-        ts = time.time()
-        result = f(*args, **kw)
-        te = time.time()
-        print('func:%r args:[%r, %r] took: %2.4f sec' % (f.__name__, args, kw, te-ts))
-        return result
-    return wrap
-
-
-@timeit
+# def timeit(f):
+#     @wraps(f)
+#     def wrap(*args, **kw):
+#         ts = time.time()
+#         result = f(*args, **kw)
+#         te = time.time()
+#         print('func:%r args:[%r, %r] took: %2.4f sec' % (f.__name__, args, kw, te-ts))
+#         return result
+#     return wrap
+#
+#
+# @timeit
 def predict_img(net,
                 full_img,
                 device,
@@ -40,7 +40,13 @@ def predict_img(net,
     img = img.to(device=device, dtype=torch.float32)
 
     with torch.no_grad():
+        starter, ender = torch.cuda.Event(enable_timing=True), torch.cuda.Event(enable_timing=True)
+        starter.record()
         output = net(img)
+        ender.record()
+        torch.cuda.synchronize()
+        curr_time = starter.elapsed_time(ender) / 1000
+        print('Net Inference Time:', curr_time)
 
         if net.n_classes > 1:
             probs = F.softmax(output, dim=1)[0]
@@ -63,7 +69,7 @@ def predict_img(net,
 
 def get_args():
     parser = argparse.ArgumentParser(description='Predict masks from input images')
-    parser.add_argument('--model', '-m', default='MODEL.pth', metavar='FILE',
+    parser.add_argument('--model', '-m', default='./checkpoints/1100x260_final.pth', metavar='FILE',
                         help='Specify the file in which the model is stored')
     parser.add_argument('--input', '-i', metavar='INPUT', nargs='+', help='Filenames of input images', required=True)
     parser.add_argument('--output', '-o', metavar='INPUT', nargs='+', help='Filenames of output images')
@@ -72,7 +78,7 @@ def get_args():
     parser.add_argument('--no-save', '-n', action='store_true', help='Do not save the output masks')
     parser.add_argument('--mask-threshold', '-t', type=float, default=0.5,
                         help='Minimum probability value to consider a mask pixel white')
-    parser.add_argument('--scale', '-s', type=float, default=0.5,
+    parser.add_argument('--scale', '-s', type=float, default=0.2,
                         help='Scale factor for the input images')
 
     return parser.parse_args()
@@ -98,7 +104,7 @@ if __name__ == '__main__':
     in_files = args.input
     out_files = get_output_filenames(args)
 
-    net = UNet(n_channels=3, n_classes=2)
+    net = UNet(n_channels=1, n_classes=2)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f'Using device {device}')
