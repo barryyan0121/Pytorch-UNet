@@ -1,7 +1,6 @@
 import argparse
 import logging
 import os
-import time
 import torch
 
 
@@ -9,7 +8,6 @@ import numpy as np
 import torch.nn.functional as F
 
 
-from functools import wraps
 from utils.data_loading import BasicDataset
 from unet import UNet
 from utils.utils import plot_img_and_mask
@@ -17,30 +15,18 @@ from PIL import Image
 from torchvision import transforms
 
 
-# def timeit(f):
-#     @wraps(f)
-#     def wrap(*args, **kw):
-#         ts = time.time()
-#         result = f(*args, **kw)
-#         te = time.time()
-#         print('func:%r args:[%r, %r] took: %2.4f sec' % (f.__name__, args, kw, te-ts))
-#         return result
-#     return wrap
-#
-#
-# @timeit
 def predict_img(net,
                 full_img,
                 device,
                 scale_factor=1,
                 out_threshold=0.5):
     net.eval()
+    starter, ender = torch.cuda.Event(enable_timing=True), torch.cuda.Event(enable_timing=True)
     img = torch.from_numpy(BasicDataset.preprocess(full_img, scale_factor, is_mask=False))
     img = img.unsqueeze(0)
     img = img.to(device=device, dtype=torch.float32)
-
+    net(torch.rand_like(img))
     with torch.no_grad():
-        starter, ender = torch.cuda.Event(enable_timing=True), torch.cuda.Event(enable_timing=True)
         starter.record()
         output = net(img)
         ender.record()
@@ -69,7 +55,7 @@ def predict_img(net,
 
 def get_args():
     parser = argparse.ArgumentParser(description='Predict masks from input images')
-    parser.add_argument('--model', '-m', default='./checkpoints/1100x260_final.pth', metavar='FILE',
+    parser.add_argument('--model', '-m', default='./checkpoints/best_final.pth', metavar='FILE',
                         help='Specify the file in which the model is stored')
     parser.add_argument('--input', '-i', metavar='INPUT', nargs='+', help='Filenames of input images', required=True)
     parser.add_argument('--output', '-o', metavar='INPUT', nargs='+', help='Filenames of output images')
@@ -107,6 +93,7 @@ if __name__ == '__main__':
     net = UNet(n_channels=1, n_classes=2)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    # device = torch.device('cpu')
     print(f'Using device {device}')
     logging.info(f'Loading model {args.model}')
     logging.info(f'Using device {device}')

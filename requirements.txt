@@ -1,7 +1,9 @@
-matplotlib
-numpy
-Pillow
-torch
-torchvision
-tqdm
-wandb
+matplotlib~=3.2.2
+numpy~=1.21.5
+Pillow~=9.0.0
+torch~=1.10.1+cu113
+torchvision~=0.11.2+cu113
+tqdm~=4.62.3
+wandb~=0.12.10
+torchsummary~=1.5.1
+opencv-python~=4.5.5.62
